@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>끝말잇기 게임</title>
+  <link rel="stylesheet" href="css/word-relay.css" />
+</head>
+<body>
+  <!-- 배경/테마 컨트롤 -->
+  <div class="toolbar">
+    <label for="bgSelect">배경:</label>
+    <select id="bgSelect">
+      <option value="city">City</option>
+      <option value="forest">Forest</option>
+      <option value="ocean">Ocean</option>
+    </select>
+
+    <button id="themeToggle">🌙</button>
+    <button id="musicToggle">🔊</button>
+  </div>
+
+  <div class="container">
+    <h1>끝말잇기 게임</h1>
+
+    <div class="panel">
+      <p>현재 차례: <span id="currentPlayer"></span></p>
+      <p>제시어: <span id="word"></span></p>
+      <p>남은 시간: <span id="timer">10</span>초</p>
+      <div id="timeBar"></div>
+    </div>
+
+    <div class="input-row">
+      <input id="wordInput" type="text" placeholder="단어를 입력하세요" />
+      <button id="submitBtn">입력</button>
+    </div>
+
+    <div class="board">
+      <h3>참가자</h3>
+      <ul id="playersBoard"></ul>
+    </div>
+  </div>
+
+  <!-- 승리 팝업 -->
+  <div id="winnerPopup" class="popup hidden">
+    <div class="popup-content">
+      <h2 id="winnerName"></h2>
+      <p>우승을 축하합니다 🎉</p>
+      <h3>최종 점수</h3>
+      <ul id="finalScores"></ul>
+      <button onclick="location.reload()">다시 시작</button>
+    </div>
+  </div>
+
+  <!-- 사운드 -->
+  <audio id="eliminateSound" src="https://www.soundjay.com/buttons/beep-07.mp3"></audio>
+  <audio id="winSound"       src="https://www.soundjay.com/misc/small-bell-ring-01a.mp3"></audio>
+  <audio id="bgMusic"        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+
+  <script src="js/word-relay.js"></script>
+</body>
+</html>
